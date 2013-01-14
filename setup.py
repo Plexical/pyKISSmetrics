@@ -1,21 +1,20 @@
-#!/usr/bin/env python
+import multiprocessing, logging
+from setuptools import setup, find_packages
 
-sdict = dict(
-    name = 'KISSmetrics',
+setup(
+    name = 'pyKISSmetrics',
     packages = ['KISSmetrics'],
-    version = '0.1.0',
-    description = 'Python client for KISSmetrics',
-    long_description = 'Python client for KISSmetrics',
-    url = 'http://github.com/kissmetrics/KISSmetrics',
+    version = '0.2.0',
+    description = 'Unofficial Python client for KISSmetrics',
+    long_description = 'Unofficial Python client for KISSmetrics',
+    url = 'http://github.com/shakefu/pyKISSmetrics',
     author = 'kissmetrics',
     author_email = 'support@kissmetrics.com',
-    maintainer = 'kissmetrics',
-    maintainer_email = 'support@kissmetrics.com',
+    maintainer = 'Jake Alheid',
+    maintainer_email = 'jacob.alheid@gmail.com',
     keywords = ['kissmetrics'],
-#    license = 'MIT',
     classifiers=[
         'Programming Language :: Python',
-#        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
@@ -23,6 +22,3 @@ sdict = dict(
     ],
     install_requires = [],
 )
-
-from distutils.core import setup
-setup(**sdict)

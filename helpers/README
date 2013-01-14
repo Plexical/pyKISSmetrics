@@ -1,3 +1,0 @@
-This directory contains various helper files which may be useful when using KISSmetrics.
-
-is_robot - script to detect whether a call is coming from a known bot/scraper.
