@@ -79,7 +79,7 @@ class API(object):
             data['_t'] = pytool.time.toutctimestamp(pytool.time.utcnow())
 
         # Add API key to data
-        data['_k'] = self._key
+        data['_k'] = self._api_key
 
         # Add identity to data
         if identity:
@@ -89,6 +89,7 @@ class API(object):
         path = '/{}'.format(path)
         try:
             response = self._http.request('GET', path, data)
+            # TODO: Check the response body when the API is crappy
             return response.status == 200
         except:
             logging.getLogger(__name__).error("Error with request.",
