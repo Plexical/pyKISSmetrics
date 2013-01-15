@@ -19,7 +19,7 @@ import urllib3
 @pytool.lang.hashed_singleton
 class API(object):
     """ KISSmetrics API client class. """
-    def __init__(self, api_key, host='trk.kisssmetrics.com', http_timeout=2):
+    def __init__(self, api_key, host='trk.kissmetrics.com', http_timeout=2):
         # Handle port numbers gracefully
         if ':' in host:
             host, port = host.split(':')
@@ -89,7 +89,6 @@ class API(object):
         path = '/{}'.format(path)
         try:
             response = self._http.request('GET', path, data)
-            # TODO: Check the response body when the API is crappy
             return response.status == 200
         except:
             logging.getLogger(__name__).error("Error with request.",
