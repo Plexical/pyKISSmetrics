@@ -4,7 +4,7 @@ from setuptools import setup
 setup(
     name = 'pyKISSmetrics',
     packages = ['KISSmetrics'],
-    version = '0.2.0',
+    version = '1.0.0-dev',
     description = 'Unofficial Python client for KISSmetrics',
     long_description = 'Unofficial Python client for KISSmetrics',
     url = 'http://github.com/shakefu/pyKISSmetrics',
@@ -20,5 +20,8 @@ setup(
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
-    install_requires = [],
+    install_requires = [
+        'urllib3',
+        'pytool >= 2.1',
+        ],
 )
