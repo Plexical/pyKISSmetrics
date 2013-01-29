@@ -1,17 +1,11 @@
 # Quick-n-dirty test suite, can be run with py.test or Nose.
 
-from KISSmetrics import KM
-
 import KISSmetrics
 
-class Fake: pass
-
-def test_construction():
+def test_can_init():
     API = KISSmetrics.API
     try:
-        km = KM('fake-key')
-        KISSmetrics.API = Fake
-        km.identify('fake@example.com')
-        km.record('An event', {'foo': 'bar'})
+        KISSmetrics.API = lambda *args: 'can-init'
+        assert KISSmetrics.KM('fake-key').api == 'can-init'
     finally:
         KISSmetrics.API = API
