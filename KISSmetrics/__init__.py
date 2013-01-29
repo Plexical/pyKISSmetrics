@@ -112,7 +112,7 @@ class KM(object):
     @property
     def api(self):
         """ Return an :class:`API` instance. """
-        return API(self.key, self._host, self._http_timeout)
+        return API(self._key, self._host, self._http_timeout)
 
     def identify(self, id):
         self._id = id
